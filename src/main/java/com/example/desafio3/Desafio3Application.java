@@ -53,8 +53,6 @@ Cliente  cliente2 = new Cliente();
 		
 		
 		System.out.println("Nombre cliente: " + clienteService.findbyId((long) 2).getNombre());
-		System.out.println("ID cliente: " + clienteService.findByNombreandApellido(clienteService.findbyId((long) 2).getNombre(), clienteService.findbyId((long) 2).getApellidos()).getId());
-
 		
 		for (Cliente cliente : clienteService.findAll()) {
 			

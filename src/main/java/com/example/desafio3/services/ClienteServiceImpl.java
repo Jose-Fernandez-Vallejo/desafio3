@@ -21,7 +21,7 @@ public class ClienteServiceImpl implements ClienteServiceI {
 	}
 
 	@Override
-	public Cliente findByNombreandApellido(String nombre, String apellido) {
+	public List<Cliente> findByNombreandApellido(String nombre, String apellido) {
 
 		return repository.findByNombreAndApellidos(nombre, apellido);
 	}

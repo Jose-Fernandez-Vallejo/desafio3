@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -71,9 +72,7 @@ public class ClienteController {
 
 		  
 		  if (nombre!=null && nombre != "") { 
-			  List<Cliente> clientes = new ArrayList();
-			  clientes.add(clienteServiceI.findByNombreandApellido(nombre, apellidos));
-			  model.addAttribute("clientes" ,clientes);
+			  model.addAttribute("clientes" ,clienteServiceI.findByNombreandApellido(nombre, apellidos));
 		}
 
 		    

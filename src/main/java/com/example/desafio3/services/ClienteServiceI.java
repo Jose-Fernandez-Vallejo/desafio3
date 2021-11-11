@@ -8,7 +8,7 @@ public interface ClienteServiceI {
 	void AddCliente(Cliente cliente);
 	List<Cliente> findAll();
 	Cliente findbyId(Long id);
-	Cliente findByNombreandApellido(String nombre, String apellido);
+	List<Cliente> findByNombreandApellido(String nombre, String apellido);
 	Long RemoveCliente(Cliente cliente);
 	Long RemoveClienteFromId(Long cliente);
 	

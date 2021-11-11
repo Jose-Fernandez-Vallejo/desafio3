@@ -1,5 +1,6 @@
 package com.example.desafio3.restControllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,5 +34,16 @@ ClienteServiceI clienteServiceI;
 		  
 	     
 	  }
+	  
+	  @RequestMapping("/restSearch/{nombre}/{apellidos}")
+	  public List<Cliente> showClientes(@PathVariable String nombre,@PathVariable String apellidos) {
+		  
+		 return clienteServiceI.findByNombreandApellido(nombre, apellidos);
+	     
+	  }
+	  
+	  
+	  //falta por crear el añadir cliente
+	   
 
 }
