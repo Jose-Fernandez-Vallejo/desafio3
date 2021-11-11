@@ -1,5 +1,7 @@
 package com.example.desafio3.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,13 +30,25 @@ public class ClienteServiceImpl implements ClienteServiceI {
 	public void AddCliente(Cliente cliente) {
 		
 		repository.save(cliente);
-		
 	}
 
 	@Override
 	public Long RemoveCliente(Cliente cliente) {
 		 repository.delete(cliente);
 		 return cliente.getId();
+	}
+
+	@Override
+	public List<Cliente> findAll() {
+		return repository.findAll();
+	}
+
+	@Override
+	public Long RemoveClienteFromId(Long cliente) {
+		
+		repository.deleteById(cliente);
+		// TODO Auto-generated method stub
+		return cliente;
 	}
 
 }

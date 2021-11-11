@@ -1,0 +1,39 @@
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Anadir Cliente</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <style>
+        input {
+         
+          margin-bottom: 10pt;
+        }
+        </style>
+</head>
+<body>
+    <h3>Opciones</h3>
+    <ul>
+        <li><a href="./index">Inicio</a></li>
+        <li ><a href="./showClientes">Mostrar clientes</a></li>
+        <li><a href="./addCliente">Añadir cliente</a></li>
+        <li><a href="./searchCliente">buscar cliente</a></li>
+      </ul>
+
+      <h1>Añadir cliente</h1>
+
+      <form th:action="@{/addCliente/create}" th:object="${cliente}" th:method="post">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" th:field=*{nombre} th:name="nombre"><br>
+        <label for="apellidos">Apellidos:</label><br>
+        <input type="text" id="apellidos" th:field=*{apellidos} th:name="apellidos"><br>
+        <label for="fecha">Fecha nacimiento:</label><br>
+        <input type="text" id="fecha"  name="fecha"><br>
+        <label for="documento">Documento identificacion:</label><br>
+        <input type="text" id="documento" th:field=*{documentoIdentidad} th:name="documento"><br>
+        <input type="submit" value="Enviar">
+      </form>
+
+</body>
+</html>

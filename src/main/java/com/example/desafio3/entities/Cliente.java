@@ -1,5 +1,8 @@
 package com.example.desafio3.entities;
 
+import java.io.Serializable;
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "CLIENTE2")
-public class Cliente {
+public class Cliente implements Serializable {
 	
 	Long id;
 	String nombre;

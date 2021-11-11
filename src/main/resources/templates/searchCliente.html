@@ -1,0 +1,58 @@
+<!DOCTYPE html >
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>buscar Cliente</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./showClientes.css'>
+    <style>
+        table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+          padding: 10pt;
+        }
+        </style>
+</head>
+<body>
+    <h3>Opciones</h3>
+    <ul>
+        <li><a href="./index">Inicio</a></li>
+        <li ><a href="./showClientes">Mostrar clientes</a></li>
+        <li><a href="./addCliente">Añadir cliente</a></li>
+        <li><a href="./searchCliente">buscar cliente</a></li>
+      </ul>
+
+
+<h1>Buscar cliente</h1>
+
+<form th:action="@{/searchCliente}" th:method="post">
+    <label for="nombre">Nombre:</label><br>
+    <input type="text" id="nombre" th:name="nombre"><br>
+    <label for="apellidos">Apellidos:</label><br>
+    <input type="text" id="apellidos" th:name="apellidos" ><br>
+    <input type="submit" value="Enviar">
+  </form>
+
+
+  <table>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Documento</th>
+        <th>Fecha Nac</th>
+        <th>Eliminar</th>
+      </tr>
+    <tr th:each="cliente : ${clientes}">
+    <td th:text="${cliente.id}"></td>
+    <td th:text="${cliente.nombre}"></td>
+    <td th:text="${cliente.apellidos}"></td>
+    <td th:text="${cliente.documentoIdentidad}"></td>
+    <td th:text="${cliente.fecha}"></td>
+    </tr>
+</table>
+
+
+</body>
+</html>
